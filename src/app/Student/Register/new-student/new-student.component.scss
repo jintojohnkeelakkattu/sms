@@ -1,0 +1,60 @@
+.content-wrapper{
+    margin-top: 60px;
+}    
+:host ::ng-deep .tabview-custom { i, span { vertical-align: middle; } span { margin: 0 .5rem; }
+} :host ::ng-deep .p-button { margin-right: .25rem;
+} :host ::ng-deep .p-tabview p { line-height: 1.5; margin: 0;
+}
+.labelStyle{
+    line-height: 20px;
+    padding-right: 10px;
+    color: #81868c;
+    font-weight: 600 !important;
+
+}
+.rowstyle{
+    margin-top: 10px;
+}
+.labelStyle.calender {
+    margin-right: 45px;
+}
+.labelStyle.nationality{
+margin-right: 18px;
+}
+.ng-trigger-overlayAnimation{
+    top:0px !important
+}
+.currentclassstyle{
+    width: 75px;
+}
+.joinYearClass{
+    margin-right: 12px;
+}
+.width190{
+    width: 190px;
+}
+.width-165{
+    width: 165 !important;
+}
+.margin-right25{
+   margin-right:  25px
+}
+.margin-right70px{
+    margin-right:70px;
+}
+.margin-right18{
+    margin-right: 18px
+}
+.margin-right10{
+    margin-right:10px
+}
+.styletextarea{
+    height: 136px !important;
+    overflow: hidden !important;
+    position: relative !important;
+    margin-left: 55px !important;
+    margin-top: 0px !important;
+}
+.floatStyleRight{
+    float:right
+}

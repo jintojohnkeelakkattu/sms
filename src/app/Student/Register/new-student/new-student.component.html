@@ -1,0 +1,131 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+
+    <div class="col-md-12">
+
+    <p-tabView>
+    
+        <p-tabPanel header="Primary Information">
+            <form [formGroup]="form" >  
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label  class="labelStyle margin-right25">First Name</label>
+                        <input type="text" class="width-165" formControlName="fname" pInputText placeholder="FirstName"  [ngClass]="{ 'is-invalid': submitted && f.fname.errors }" />
+                        <div *ngIf="submitted && f.fname.errors" class="invalid-feedback">
+                           <div *ngIf="f.fname.errors.required">First Name is required</div>
+                       </div>    
+                    </div>
+                    <div class="col-md-4">
+                        <label class="labelStyle">Middle Name</label>
+                        <input type="text" class="width-165" formControlName="sname" pInputText placeholder="Second Name"  />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="labelStyle">Last Name</label>
+                        <input type="text" class="width-165" formControlName="lname" pInputText placeholder="Last Name"  [ngClass]="{ 'is-invalid': submitted && f.lname.errors }" />
+                        <div *ngIf="submitted && f.lname.errors" class="invalid-feedback">
+                           <div *ngIf="f.lname.errors.required">Last Name is required</div>
+                       </div>    
+                    </div>
+                </div>
+                <div class="row rowstyle">
+
+                    <div class="p-field col-md-4">
+                        <label class="labelStyle margin-right70px" >DOB</label>
+                        <p-calendar [(ngModel)]="date1"
+                        [monthNavigator]="true"
+                         [ngClass]="{ 'is-invalid': submitted && f.dob.errors }"
+                        formControlName="dob"
+                        [yearNavigator]="true" yearRange="2000:2030" inputId="navigators"></p-calendar>
+                         <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
+                           <div *ngIf="f.dob.errors.required">DOB is required</div>
+                       </div>    
+
+                    </div>
+                    <div class="p-field col-md-4">
+                        <label class="labelStyle nationality" >Nationality</label>
+                        <input type="text" formControlName="nationality" pInputText placeholder="Nationality"  [ngClass]="{ 'is-invalid': submitted && f.nationality.errors }" />
+                        <div *ngIf="submitted && f.nationality.errors" class="invalid-feedback">
+                           <div *ngIf="f.nationality.errors.required">Nationality is required</div>
+                       </div>   
+                    </div>
+                    <div class="p-field col-md-4">
+                        <label class="labelStyle" >Birth Place</label>
+                        <input type="text" formControlName="birthPlace" pInputText placeholder="Birth Place"  [ngClass]="{ 'is-invalid': submitted && f.birthPlace.errors }" />
+                        <div *ngIf="submitted && f.birthPlace.errors" class="invalid-feedback">
+                           <div *ngIf="f.birthPlace.errors.required">Birth Place is required</div>
+                       </div>   
+                    </div>
+                </div>
+                <div class="row rowstyle">
+
+                    <div class="p-field col-md-4">
+                        <label class="labelStyle margin-right18" >Year Of Join</label>
+                        <p-calendar [(ngModel)]="date1"
+                        [monthNavigator]="true"
+                         [ngClass]="{ 'is-invalid': submitted && f.joinDate.errors }"
+                        formControlName="joinDate"
+                        [yearNavigator]="true" yearRange="2000:2030" inputId="navigators"></p-calendar>
+                         <div *ngIf="submitted && f.joinDate.errors" class="invalid-feedback">
+                           <div *ngIf="f.joinDate.errors.required">Join Date is required</div>
+                       </div>     
+                    </div>
+                    <div class="p-field col-md-4">
+                    </div>
+                    <div class="p-field col-md-4">
+                        <label class="labelStyle margin-right25" >Mentor</label>
+                        <input type="text" formControlName="mentor" pInputText placeholder="Mentor"  [ngClass]="{ 'is-invalid': submitted && f.mentor.errors }" />
+                        <div *ngIf="submitted && f.mentor.errors" class="invalid-feedback">
+                           <div *ngIf="f.mentor.errors.required">Mentor Name is required</div>
+                       </div>
+                    </div>
+                </div>
+                <div class="row rowstyle">
+                    <div class="p-field col-md-4">
+                        <label class="labelStyle margin-right10" >Current Class</label>
+                        <input type="text" formControlName="class" pInputText placeholder="Class"  [ngClass]="{ 'is-invalid': submitted && f.class.errors }" />
+                        <div *ngIf="submitted && f.class.errors" class="invalid-feedback">
+                           <div *ngIf="f.class.errors.required">Class Name is required</div>
+                       </div>
+                    </div>
+                </div>
+                <div class="row rowstyle">
+                    <div class="p-field col-md-12">
+                        <label class="labelStyleAddress" >Address</label>
+                        
+                        <textarea class="styletextarea" rows="5" cols="50"  formControlName="address" pInputTextarea autoResize="autoResize"   [ngClass]="{ 'is-invalid': submitted && f.address.errors }"></textarea>
+
+                        <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+                           <div *ngIf="f.address.errors.required">Addressis required</div>
+                       </div>
+                    </div>
+                </div>
+                <div class="row rowstyle">
+                    <div class="p-field col-md-12">
+                        <button pButton pRipple type="button" label="Cancel" class="p-button-raised p-button-danger floatStyleRight"></button>
+                        <button pButton type="button" label="Create" class="floatStyleRight" (click)="onSubmit()"></button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+
+        </p-tabPanel>
+        <p-tabPanel *ngIf="IsprimaryContactUpdated" header="OtherInfo">
+            <ng-template pTemplate="content">
+             <app-student-primary-information></app-student-primary-information>
+            </ng-template>
+        </p-tabPanel>
+
+    </p-tabView>
+
+
+
+
+</div>
+
+</div></div></div></div>

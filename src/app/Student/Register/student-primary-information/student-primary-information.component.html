@@ -1,0 +1,82 @@
+<form [formGroup]="secondary" >  
+    <div class="card-body">
+
+        <div class="hedaerInfos">
+            <p-fieldset legend=" Contact Informations" [toggleable]="true" class="col-md-12" styleClass="hedaerInfo">
+                <div class="row">
+                <div class="col-md-6">
+                    <label  class="labelStyle margin-right25">Father's Name</label>
+                    <input type="text" formControlName="ftrname" pInputText placeholder="Name"  [ngClass]="{ 'is-invalid': submitted && f.ftrname.errors }" />
+                    <div *ngIf="submitted && f.ftrname.errors" class="invalid-feedback">
+                       <div *ngIf="f.ftrname.errors.required">Name is required</div>
+                   </div>    
+                </div>
+                <div class="col-md-6">
+                    <label class="labelStyle">Contact Number</label>
+                    <input type="text" formControlName="Fthrcontact" pInputText placeholder="Contact Number"  />
+                </div>
+ 
+            </div>  
+            <div class="row margin-top10">
+                <div class="col-md-6">
+                    <label  class="labelStyle margin-right18">Mother's Name</label>
+                    <input type="text" formControlName="Mtrname" pInputText placeholder="Name"  [ngClass]="{ 'is-invalid': submitted && f.Mtrname.errors }" />
+                    <div *ngIf="submitted && f.Mtrname.errors" class="invalid-feedback">
+                       <div *ngIf="f.Mtrname.errors.required">Name is required</div>
+                   </div>    
+                </div>
+                <div class="col-md-6">
+                    <label class="labelStyle">Contact Number</label>
+                    <input type="text" formControlName="Mtrcontact" pInputText placeholder="Contact Number"  />
+                </div>
+ 
+            </div>  
+        
+            <div class="row rowstyle">
+                <div class="p-field col-md-12">
+                    <button pButton pRipple type="button" label="Cancel" class="p-button-raised p-button-danger floatStyleRight"></button>
+                    <button pButton type="button" label="Save" class="floatStyleRight" (click)="onSubmit()"></button>
+                </div>
+            </div>
+        </p-fieldset>
+        <p-fieldset legend=" Physique Information" [toggleable]="true" class="col-md-12" styleClass="hedaerInfo1">
+            <div class="row">
+            <div class="col-md-4">
+                <label  class="labelStyle margin-right25">Height</label>
+                <input type="text" formControlName="txtHeight" [ngClass]="{ 'is-invalid': submitted && f.txtHeight.errors }" />
+                <div *ngIf="submitted && f.txtHeight.errors" class="invalid-feedback">
+                   <div *ngIf="f.txtHeight.errors.required">Field required</div>
+               </div>    
+            </div>
+            <div class="col-md-4">
+                <label  class="labelStyle margin-right25">Weight</label>
+                <input type="text" formControlName="txtWeight" [ngClass]="{ 'is-invalid': submitted && f.txtWeight.errors }" />
+                <div *ngIf="submitted && f.txtWeight.errors" class="invalid-feedback">
+                   <div *ngIf="f.txtWeight.errors.required">Field required</div>
+               </div>    
+            </div>
+            <div class="col-md-4">
+                <label class="labelStyle">Blood Group</label>
+                <input type="text" formControlName="txtBloodGroup" pInputText placeholder="Blood Group"  [ngClass]="{ 'is-invalid': submitted && f.txtBloodGroup.errors }" />
+                <div *ngIf="submitted && f.txtBloodGroup.errors" class="invalid-feedback">
+                   <div *ngIf="f.txtBloodGroup.errors.required">Field is required</div>
+               </div>    
+            </div>  
+
+        </div>  
+        <div class="row rowstyle">
+            <div class="p-field col-md-12">
+                <button pButton pRipple type="button" label="Cancel" class="p-button-raised p-button-danger floatStyleRight"></button>
+                <button pButton type="button" label="Create" class="floatStyleRight" (click)="onSubmit()"></button>
+            </div>
+        </div> 
+    </p-fieldset>
+        </div>
+   
+
+
+
+
+    </div>
+
+</form>
